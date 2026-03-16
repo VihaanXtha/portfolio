@@ -33,11 +33,14 @@ const TechStackCard = () => {
         </span>
       </div>
       <div className="grid grid-cols-4 gap-2 stagger-children">
-        {techs.map((tech) => (
+        {techs.map((tech, index) => (
           <motion.div
             key={tech.name}
-            whileHover={{ scale: 1.05, y: -2 }}
-            className="border-[2px] border-foreground p-3 flex flex-col items-center justify-center gap-1.5 text-center cursor-default"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: index * 0.1, duration: 0.3 }}
+            whileHover={{ scale: 1.1, y: -5, rotate: 5 }}
+            className="border-[2px] border-foreground p-3 flex flex-col items-center justify-center gap-1.5 text-center cursor-default transition-all duration-300"
             style={{ backgroundColor: colorMap[tech.color] + '20' }}
           >
             <span className="text-xl">{tech.icon}</span>

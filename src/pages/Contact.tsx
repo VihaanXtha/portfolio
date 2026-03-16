@@ -6,6 +6,7 @@ import { useState } from "react";
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   return (
     <MainLayout>
@@ -35,7 +36,14 @@ const Contact = () => {
               ) : (
                 <>
                   <h2 className="text-sm font-black uppercase tracking-wider font-display mb-6">Send a Message</h2>
-                  <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}>
+                  <form className="space-y-5" onSubmit={async (e) => { 
+                    e.preventDefault(); 
+                    setLoading(true);
+                    // Simulate API call
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    setLoading(false);
+                    setSubmitted(true); 
+                  }}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <label className="text-[10px] font-bold uppercase tracking-[0.2em] font-display block mb-2 text-muted-foreground">Name</label>
@@ -75,10 +83,11 @@ const Contact = () => {
                     </div>
                     <button
                       type="submit"
-                      className="border-[3px] border-foreground px-8 py-3 text-xs font-black uppercase tracking-wider font-display hover:translate-x-1 hover:translate-y-1 transition-transform"
+                      disabled={loading}
+                      className="border-[3px] border-foreground px-8 py-3 text-xs font-black uppercase tracking-wider font-display hover:translate-x-1 hover:translate-y-1 transition-transform disabled:opacity-50 disabled:cursor-not-allowed"
                       style={{ backgroundColor: 'hsl(var(--accent-yellow))' }}
                     >
-                      Send Message ↗
+                      {loading ? 'Sending...' : 'Send Message ↗'}
                     </button>
                   </form>
                 </>

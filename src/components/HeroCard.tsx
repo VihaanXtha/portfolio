@@ -8,7 +8,8 @@ const HeroCard = () => {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] }}
-      className="brutal-card-static p-6 md:p-10 md:col-span-2 md:row-span-2 flex flex-col justify-between min-h-[450px] relative overflow-hidden noise-overlay"
+      className="brutal-card-static p-6 md:p-10 md:col-span-2 md:row-span-2 flex flex-col justify-between min-h-[450px] relative overflow-hidden"
+      style={{ background: 'var(--hero-gradient)' }}
     >
       <div className="relative z-10">
         {/* Status indicator */}
@@ -25,7 +26,7 @@ const HeroCard = () => {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.4 }}
-            className="w-24 h-24 md:w-32 md:h-32 rounded-full border-[3px] border-foreground overflow-hidden flex-shrink-0"
+            className="w-24 h-24 md:w-32 md:h-32 rounded-full border-[3px] border-foreground overflow-hidden flex-shrink-0 animate-float"
             style={{ backgroundColor: 'hsl(var(--accent-yellow))' }}
           >
             <img src={avatar} alt="Vihaan Shrestha" className="w-full h-full object-cover" />
