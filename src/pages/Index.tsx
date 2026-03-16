@@ -5,23 +5,18 @@ import TechStackCard from "@/components/TechStackCard";
 import InternshipCard from "@/components/InternshipCard";
 import EducationCard from "@/components/EducationCard";
 import CommunityCard from "@/components/CommunityCard";
+import Marquee from "@/components/Marquee";
 
 const Index = () => {
   return (
     <MainLayout>
+      <Marquee items={["MERN Stack", "Digital Media", "Flutter", "React", "Node.js", "UI/UX", "Open Source", "Social Impact"]} />
       <div className="p-4 md:p-8 lg:p-12">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {/* Hero - spans 2 cols and 2 rows */}
             <HeroCard />
-
-            {/* Experience */}
             <ExperienceCard />
-
-            {/* Tech Stack - spans 2 cols */}
             <TechStackCard />
-
-            {/* Bottom row: 3 equal cards */}
             <InternshipCard />
             <EducationCard />
             <CommunityCard />
