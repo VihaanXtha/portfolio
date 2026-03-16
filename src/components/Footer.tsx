@@ -38,10 +38,9 @@ const Footer = () => {
           <h4 className="text-xs font-black uppercase tracking-[0.3em] font-display mb-6 border-b-[3px] border-foreground pb-2 inline-block">Connect</h4>
           <div className="space-y-4">
             {[
-              { label: "LinkedIn", url: "#" },
-              { label: "GitHub", url: "#" },
-              { label: "Dribbble", url: "#" },
-              { label: "Email", url: "mailto:hello@vshrestha.com" },
+              { label: "LinkedIn", url: "https://www.linkedin.com/in/vihaan-shrestha-a4604a370" },
+              { label: "GitHub", url: "https://github.com/VihaanXtha" },
+              { label: "Email", url: "mailto:sthaushab4@gmail.com" },
             ].map((link) => (
               <a
                 key={link.label}
